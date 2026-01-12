@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Container } from '@/components/ui'
 import { NAV_LINKS } from '@/lib/constants'
 import { cn } from '@/lib/utils'
@@ -10,6 +11,7 @@ import { cn } from '@/lib/utils'
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,20 +21,24 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const isActive = (href: string) => {
+    if (href === '/') {
+      return pathname === '/'
+    }
+    return pathname.startsWith(href)
+  }
+
   return (
     <header
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        {
-          'bg-white/95 backdrop-blur-sm shadow-sm': isScrolled,
-          'bg-transparent': !isScrolled,
-        }
+        'bg-white/95 backdrop-blur-sm shadow-sm'
       )}
     >
       <Container>
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="#inicio" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <Image
               src="/images/logo.png"
               alt="Samario Crece"
@@ -52,8 +58,8 @@ export function Header() {
                   className={cn(
                     'font-medium transition-colors hover:text-primary',
                     {
-                      'text-secondary': isScrolled,
-                      'text-secondary md:text-white': !isScrolled,
+                      'text-primary': isActive(link.href),
+                      'text-secondary': !isActive(link.href),
                     }
                   )}
                 >
@@ -70,10 +76,7 @@ export function Header() {
             aria-label="Toggle menu"
           >
             <svg
-              className={cn('w-6 h-6 transition-colors', {
-                'text-secondary': isScrolled,
-                'text-secondary md:text-white': !isScrolled,
-              })}
+              className="w-6 h-6 text-secondary"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -105,7 +108,13 @@ export function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="block px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50"
+                    className={cn(
+                      'block px-4 py-2 hover:bg-gray-50 transition-colors',
+                      {
+                        'text-primary bg-primary/5': isActive(link.href),
+                        'text-secondary hover:text-primary': !isActive(link.href),
+                      }
+                    )}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}

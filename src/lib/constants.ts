@@ -6,12 +6,11 @@ export const SITE_CONFIG = {
 }
 
 export const NAV_LINKS = [
-  { href: '#inicio', label: 'Inicio' },
-  { href: '#nosotros', label: 'Nosotros' },
-  { href: '#mision', label: 'Misión' },
-  { href: '#programas', label: 'Programas' },
-  { href: '#valores', label: 'Valores' },
-  { href: '#contacto', label: 'Contacto' },
+  { href: '/', label: 'Inicio' },
+  { href: '/nosotros', label: 'Nosotros' },
+  { href: '/programas', label: 'Programas' },
+  { href: '/noticias', label: 'Noticias' },
+  { href: '/contacto', label: 'Contacto' },
 ]
 
 export const MISSION = {
@@ -75,3 +74,56 @@ export const CONTACT_INFO = {
     twitter: '#',
   },
 }
+
+export const PARTNERS = [
+  {
+    name: 'Alcaldía de Santa Marta',
+    logo: '/images/partners/alcaldia.png',
+    description: 'Apoyo institucional para programas deportivos',
+  },
+  {
+    name: 'ICBF',
+    logo: '/images/partners/icbf.png',
+    description: 'Instituto Colombiano de Bienestar Familiar',
+  },
+  {
+    name: 'Empresa Privada',
+    logo: '/images/partners/empresa1.png',
+    description: 'Patrocinio de actividades deportivas',
+  },
+  {
+    name: 'Fundación Aliada',
+    logo: '/images/partners/fundacion.png',
+    description: 'Colaboración en proyectos sociales',
+  },
+]
+
+export const NEWS = [
+  {
+    slug: 'torneo-futbol-juvenil-2026',
+    title: 'Torneo de Fútbol Juvenil 2026',
+    excerpt: 'Club Reino Samario organiza el primer torneo de fútbol juvenil con más de 100 participantes de diferentes barrios de Santa Marta.',
+    content: 'El Club Reino Samario se complace en anunciar el primer torneo de fútbol juvenil del año 2026, donde participarán más de 100 jóvenes de diferentes barrios de Santa Marta...',
+    date: '2026-01-10',
+    image: '/images/news/torneo-2026.jpg',
+    category: 'Deportes',
+  },
+  {
+    slug: 'nuevo-programa-academico',
+    title: 'Nuevo Programa de Apoyo Académico',
+    excerpt: 'Lanzamos un nuevo programa de refuerzo escolar para ayudar a nuestros jóvenes a mejorar su rendimiento académico.',
+    content: 'Fundación Samario Crece lanza un innovador programa de apoyo académico diseñado para complementar la formación deportiva con excelencia educativa...',
+    date: '2026-01-05',
+    image: '/images/news/programa-academico.jpg',
+    category: 'Educación',
+  },
+  {
+    slug: 'alianza-estrategica',
+    title: 'Nueva Alianza Estratégica',
+    excerpt: 'Firmamos una alianza con organizaciones locales para ampliar nuestro impacto en la comunidad samaria.',
+    content: 'La Fundación Samario Crece firma una alianza estratégica con importantes organizaciones locales para ampliar el alcance de nuestros programas...',
+    date: '2025-12-20',
+    image: '/images/news/alianza.jpg',
+    category: 'Institucional',
+  },
+]

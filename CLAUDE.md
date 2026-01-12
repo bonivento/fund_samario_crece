@@ -1,420 +1,209 @@
-# SAMARIO CRECE - Landing Page
+# CLAUDE.md
 
-## Resumen del Proyecto
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-Página web para la **Fundación SAMARIO CRECE**, una organización ubicada en Santa Marta, Colombia, dedicada a la restauración de vínculos familiares de jóvenes en estado de vulnerabilidad (12-20 años) a través de programas deportivos.
+## Project Overview
 
-La fundación también gestiona el club deportivo **REINO SAMARIO**, enfocado en la formación atlética integral con énfasis en fútbol.
+**Samario Crece** is a multi-page Next.js website for a Colombian foundation dedicated to restoring family bonds for vulnerable youth (ages 12-20) in Santa Marta through sports programs. The foundation also manages the **Reino Samario** sports club.
 
----
-
-## Información de la Fundación
-
-### Misión
-Restauración de vínculos familiares de jóvenes samarios en estado de vulnerabilidad, rescatando principios y valores familiares mediante programas deportivos, bajo los valores de amor, respeto y solidaridad.
-
-### Visión
-En 2027, ser una fundación reconocida en Santa Marta y la costa Caribe Colombiana por liderar la restauración de jóvenes vulnerables mediante programas deportivos que fortalezcan el aspecto técnico, espiritual y emocional.
-
-### Valores Corporativos
-- **Solidaridad**: Trato amable y equitativo hacia la restauración del bienestar
-- **Respeto**: Aceptar y reconocer diferencias con buen trato
-- **Responsabilidad**: Compromiso con los acuerdos pactados
-- **Honestidad**: Rectitud e integridad en actividades y proyectos
-
-### Objetivos
-- Crear relaciones con clubes deportivos
-- Capacitación escolar para jóvenes
-- Asesoramiento psicológico y espiritual
-
----
-
-## Stack Tecnológico
-
-### Framework Principal
-- **Next.js 14+** (App Router)
-  - Compatible nativamente con Vercel
-  - SSG para rendimiento óptimo en landing page
-  - API Routes para futuro backend de donaciones
-  - Soporte TypeScript nativo
-
-### Lenguaje
-- **TypeScript** - Tipado estático para mantenibilidad
-
-### Estilos
-- **Tailwind CSS** - Utility-first, responsive por defecto
-- **CSS Modules** - Para estilos específicos de componentes si es necesario
-
-### Componentes UI
-- **Componentes propios** con Tailwind
-- **Framer Motion** - Animaciones sutiles
-
-### Formularios
-- **React Hook Form** - Manejo eficiente de formularios
-- **Zod** - Validación de esquemas
-
-### Hosting
-- **Vercel** - Deploy automático, edge functions, analytics
-
----
-
-## Identidad Visual
-
-### Colores (extraídos del logo)
-```css
-:root {
-  --primary: #00B4B4;        /* Turquesa/Cyan principal */
-  --primary-dark: #008B8B;   /* Turquesa oscuro */
-  --primary-light: #4DD4D4;  /* Turquesa claro */
-  --secondary: #1a1a1a;      /* Negro texto */
-  --background: #FFFFFF;     /* Blanco */
-  --accent: #F5F5F5;         /* Gris claro fondos */
-}
-```
-
-### Tipografía
-- **Headings**: Poppins o Montserrat (Bold) - Similar al logo
-- **Body**: Inter o Open Sans - Legibilidad
-
-### Logo
-- Ubicación: `/public/images/logo.png`
-- Usar versión optimizada en WebP para web
-
----
-
-## Estructura del Proyecto
-
-```
-samario-crece/
-├── public/
-│   ├── images/
-│   │   ├── logo.png
-│   │   ├── logo.webp
-│   │   └── hero/
-│   └── fonts/
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx
-│   │   ├── page.tsx
-│   │   ├── globals.css
-│   │   └── api/
-│   │       └── contact/
-│   │           └── route.ts
-│   ├── components/
-│   │   ├── ui/
-│   │   │   ├── Button.tsx
-│   │   │   ├── Card.tsx
-│   │   │   ├── Container.tsx
-│   │   │   └── index.ts
-│   │   ├── layout/
-│   │   │   ├── Header.tsx
-│   │   │   ├── Footer.tsx
-│   │   │   ├── Navigation.tsx
-│   │   │   └── index.ts
-│   │   └── sections/
-│   │       ├── Hero.tsx
-│   │       ├── About.tsx
-│   │       ├── Mission.tsx
-│   │       ├── Programs.tsx
-│   │       ├── Values.tsx
-│   │       ├── Impact.tsx
-│   │       ├── Contact.tsx
-│   │       └── index.ts
-│   ├── lib/
-│   │   ├── utils.ts
-│   │   └── constants.ts
-│   ├── hooks/
-│   │   └── useScrollspy.ts
-│   └── types/
-│       └── index.ts
-├── .env.local
-├── .env.example
-├── next.config.js
-├── tailwind.config.ts
-├── tsconfig.json
-├── package.json
-└── README.md
-```
-
----
-
-## Secciones de la Landing Page
-
-### 1. Header/Navegación
-- Logo a la izquierda
-- Menú de navegación (scroll suave a secciones)
-- Botón CTA "Donar" (preparado para futuro)
-- Menú hamburguesa en móvil
-- Sticky header con efecto de blur al hacer scroll
-
-### 2. Hero Section
-- Imagen de fondo con jóvenes deportistas o Santa Marta
-- Título principal: "Transformando vidas a través del deporte"
-- Subtítulo con misión resumida
-- CTA principal: "Conoce más" / "Únete"
-- Efecto parallax sutil
-
-### 3. Sobre Nosotros
-- Breve historia de la fundación
-- Imagen del equipo o actividades
-- Estadísticas de impacto (jóvenes beneficiados, familias, etc.)
-
-### 4. Misión y Visión
-- Cards con misión y visión
-- Iconografía relacionada
-- Diseño visual atractivo
-
-### 5. Programas
-- **Programas Deportivos** - Club Reino Samario
-- **Apoyo Académico** - Capacitación escolar
-- **Asesoramiento** - Psicológico y espiritual
-- Cards interactivas con más información
-
-### 6. Valores
-- Grid de valores corporativos
-- Iconos representativos
-- Animación al entrar en viewport
-
-### 7. Impacto / Testimonios
-- Contador animado de beneficiarios
-- Testimonios de jóvenes y familias (placeholder)
-- Galería de fotos
-
-### 8. Contacto
-- Formulario de contacto (nombre, email, mensaje)
-- Información de ubicación (Santa Marta)
-- Redes sociales
-- Mapa embebido (opcional)
-
-### 9. Footer
-- Logo y descripción corta
-- Links de navegación
-- Información legal
-- Redes sociales
-- Copyright
-
----
-
-## Patrones de Diseño y Arquitectura
-
-### Frontend
-1. **Component Composition Pattern**
-   - Componentes pequeños y reutilizables
-   - Props tipadas con TypeScript
-
-2. **Container/Presentational Pattern**
-   - Separación de lógica y presentación
-   - Componentes UI puros en `/components/ui`
-
-3. **Custom Hooks Pattern**
-   - Lógica reutilizable extraída en hooks
-   - `useScrollspy`, `useInView`, etc.
-
-4. **Barrel Exports**
-   - Archivos `index.ts` para exportaciones limpias
-
-### Estado y Datos
-1. **Server Components** (Next.js 14)
-   - Componentes del servidor por defecto
-   - Client components solo cuando sea necesario
-
-2. **Colocation**
-   - Datos estáticos cerca de donde se usan
-   - Constantes en `/lib/constants.ts`
-
----
-
-## Buenas Prácticas Implementadas
-
-### Performance
-- [ ] Imágenes optimizadas con `next/image`
-- [ ] Lazy loading de secciones below-the-fold
-- [ ] Font optimization con `next/font`
-- [ ] Preload de recursos críticos
-- [ ] Static generation (SSG)
-
-### SEO
-- [ ] Metadata dinámica con Next.js Metadata API
-- [ ] Open Graph tags para redes sociales
-- [ ] Structured data (JSON-LD) para organización
-- [ ] Sitemap automático
-- [ ] robots.txt configurado
-
-### Accesibilidad (a11y)
-- [ ] Semantic HTML
-- [ ] ARIA labels donde sea necesario
-- [ ] Contraste de colores WCAG AA
-- [ ] Navegación por teclado
-- [ ] Focus visible states
-- [ ] Alt text en imágenes
-
-### Responsive Design
-- [ ] Mobile-first approach
-- [ ] Breakpoints: sm(640), md(768), lg(1024), xl(1280)
-- [ ] Touch-friendly en móvil
-- [ ] Testing en múltiples dispositivos
-
-### Código
-- [ ] ESLint + Prettier configurados
-- [ ] Husky para pre-commit hooks
-- [ ] Conventional commits
-- [ ] TypeScript strict mode
-
----
-
-## Preparación para Backend (Donaciones)
-
-### Fase 1 - Infraestructura (Actual)
-```
-src/app/api/
-├── contact/
-│   └── route.ts      # Formulario de contacto
-```
-
-### Fase 2 - Donaciones (Futuro)
-```
-src/app/api/
-├── contact/
-│   └── route.ts
-├── donations/
-│   ├── route.ts          # Crear donación
-│   └── [id]/
-│       └── route.ts      # Estado de donación
-├── webhooks/
-│   └── payment/
-│       └── route.ts      # Webhook de pagos
-```
-
-### Integraciones de Pago Sugeridas (Colombia)
-1. **PayU** - Popular en Colombia
-2. **MercadoPago** - Amplia cobertura LATAM
-3. **Stripe** - Si hay donantes internacionales
-4. **PSE** - Transferencias bancarias directas
-
-### Base de Datos (Futuro)
-- **Vercel Postgres** o **PlanetScale** - Serverless SQL
-- **Prisma** como ORM
-
-### Modelo de Donación (Referencia)
-```typescript
-interface Donation {
-  id: string;
-  amount: number;
-  currency: 'COP' | 'USD';
-  donorName: string;
-  donorEmail: string;
-  isRecurring: boolean;
-  status: 'pending' | 'completed' | 'failed';
-  paymentMethod: string;
-  createdAt: Date;
-}
-```
-
----
-
-## Variables de Entorno
-
-### .env.example
-```env
-# App
-NEXT_PUBLIC_SITE_URL=https://samariocrece.org
-
-# Contact Form (futuro)
-RESEND_API_KEY=
-CONTACT_EMAIL=contacto@samariocrece.org
-
-# Analytics (opcional)
-NEXT_PUBLIC_GA_ID=
-
-# Payments (futuro)
-PAYU_MERCHANT_ID=
-PAYU_API_KEY=
-PAYU_API_LOGIN=
-```
-
----
-
-## Fases de Implementación
-
-### Fase 1: Setup y Estructura
-1. Inicializar proyecto Next.js con TypeScript
-2. Configurar Tailwind CSS
-3. Configurar ESLint y Prettier
-4. Crear estructura de carpetas
-5. Configurar fuentes y colores base
-
-### Fase 2: Componentes Base
-1. Crear componentes UI (Button, Card, Container)
-2. Implementar Header y Footer
-3. Crear layout principal
-
-### Fase 3: Secciones Landing
-1. Hero Section
-2. About Section
-3. Mission/Vision Section
-4. Programs Section
-5. Values Section
-6. Contact Section
-
-### Fase 4: Funcionalidad
-1. Navegación con scroll suave
-2. Formulario de contacto funcional
-3. Animaciones con Framer Motion
-4. Optimización de imágenes
-
-### Fase 5: SEO y Performance
-1. Configurar metadata
-2. Agregar structured data
-3. Optimizar Core Web Vitals
-4. Configurar sitemap y robots.txt
-
-### Fase 6: Deploy
-1. Configurar repositorio Git
-2. Conectar con Vercel
-3. Configurar dominio (si aplica)
-4. Verificar analytics
-
----
-
-## Comandos Útiles
+## Development Commands
 
 ```bash
-# Desarrollo
+# Install dependencies
+npm install
+
+# Development server (runs on http://localhost:3000)
 npm run dev
 
-# Build
+# Production build
 npm run build
 
-# Lint
-npm run lint
+# Start production server
+npm start
 
-# Type check
+# Type checking without emitting files
 npm run type-check
 
-# Preview producción
-npm run start
+# Linting
+npm run lint
 ```
 
----
+## Tech Stack
 
-## Recursos
+- **Framework:** Next.js 15 with App Router
+- **Language:** TypeScript (strict mode enabled)
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Form Handling:** React Hook Form + Zod
+- **Deployment:** Vercel
 
-### Documentación
-- [Next.js Docs](https://nextjs.org/docs)
-- [Tailwind CSS](https://tailwindcss.com/docs)
-- [Vercel Docs](https://vercel.com/docs)
-- [Framer Motion](https://www.framer.com/motion/)
+## Architecture
 
-### Assets
-- Logo: `/public/images/logo.png`
-- Documento estratégico: `PLATAFORMA ESTRATEGICA REINO SAMARIO CRECE.pdf`
+### Multi-Page Structure
 
----
+The project follows a **multi-page architecture** with separate routes for each main section:
 
-## Notas Adicionales
+```
+/                 - Home page (Hero + key sections preview + Partners)
+/nosotros         - About Us (includes Mission, Vision, and Values)
+/programas        - Programs page
+/noticias         - News listing page
+/noticias/[slug]  - Individual news article page
+/contacto         - Contact page
+```
 
-- El sitio debe reflejar los valores de la fundación: calidez, profesionalismo y compromiso social
-- Priorizar la experiencia en móvil dado el público objetivo
-- Mantener el diseño limpio y profesional, evitando exceso de elementos
-- Las imágenes de jóvenes deben mostrar diversidad y actividades deportivas positivas
-- Considerar versión en inglés para donantes internacionales (futuro)
+### Component Organization Pattern
+
+This project uses a **three-tier component architecture**:
+
+1. **UI Components** (`src/components/ui/`)
+   - Atomic, reusable building blocks (Button, Card, Container, SectionTitle)
+   - Pure presentational components with no business logic
+   - All components use barrel exports via `index.ts`
+
+2. **Layout Components** (`src/components/layout/`)
+   - Header and Footer components
+   - Defined once in `src/app/layout.tsx` and shared across all pages
+   - Header uses `usePathname()` to highlight active navigation
+   - Header is always visible with white background and shadow
+
+3. **Section Components** (`src/components/sections/`)
+   - Reusable page sections (Hero, About, Mission, Programs, Values, Contact, Partners)
+   - Imported into individual pages as needed
+   - Each section is a complete block with its own layout and styling
+   - All sections use `'use client'` directive for Framer Motion animations
+
+### Page Composition
+
+Pages are composed by combining section components:
+
+- **Home (`/`)**: Hero + Preview Cards + Partners + CTA
+- **Nosotros (`/nosotros`)**: About + Mission + Values
+- **Programas (`/programas`)**: Programs section
+- **Contacto (`/contacto`)**: Contact form and info
+- **Noticias (`/noticias`)**: News grid listing
+- **Noticia Detail (`/noticias/[slug]`)**: Individual article with breadcrumbs and related news
+
+All pages add `pt-20` (padding-top) to `<main>` to account for the fixed header.
+
+### Data Management
+
+- **Centralized Constants** (`src/lib/constants.ts`): All content including:
+  - Navigation links (now page routes instead of hash anchors)
+  - Mission, vision, values, and programs data
+  - Contact info and social links
+  - **Partners data** (PARTNERS array) for the Aliados section
+  - **News data** (NEWS array) for the news/blog section (prepared for future CMS)
+
+- **Server Components by Default**: Most pages are server-rendered
+- **Client Components**: Header (navigation state), Hero (animations), and all section components (Framer Motion)
+
+### Styling System
+
+**Color Palette** (defined in `tailwind.config.ts`):
+- Primary: `#00B4B4` (turquoise/cyan) - Foundation brand color
+- Primary Dark: `#008B8B`
+- Primary Light: `#4DD4D4`
+- Secondary: `#1a1a1a` (black for text)
+- Accent: `#F5F5F5` (light gray backgrounds)
+
+**Typography:**
+- Headings: Poppins
+- Body: Inter
+
+**Utilities:**
+- `cn()` helper in `src/lib/utils.ts` for conditional className merging (uses clsx)
+- `section-padding` utility class for consistent section spacing
+
+### Navigation System
+
+- **Route-based navigation** using Next.js Link component
+- Active page detection via `usePathname()` hook in Header
+- Header highlights current page in navigation
+- Smooth page transitions handled by Next.js
+- Mobile menu with active state indication
+
+### News/Blog System
+
+Currently uses **hardcoded data** from constants.ts:
+- News listing at `/noticias` displays all articles in a grid
+- Individual articles at `/noticias/[slug]` with:
+  - Breadcrumb navigation
+  - Category badges and dates
+  - Featured image placeholder
+  - Share buttons placeholder
+  - Related news section
+- **Prepared for CMS integration**: Data structure supports easy migration to Contentful, Sanity, or similar
+
+### Partners Section
+
+- Displays foundation allies/sponsors
+- Grid layout with placeholder logos
+- Includes CTA to contact page
+- Data stored in `constants.ts` PARTNERS array
+
+## Environment Variables
+
+Copy `.env.example` to `.env.local`:
+- `NEXT_PUBLIC_SITE_URL`: Public site URL
+- `RESEND_API_KEY`: Email service API key (future contact form backend)
+- `CONTACT_EMAIL`: Destination for contact form submissions
+- `NEXT_PUBLIC_GA_ID`: Google Analytics ID (optional)
+
+## Path Aliases
+
+TypeScript configured with `@/*` alias mapping to `./src/*`:
+```typescript
+import { Button } from '@/components/ui'
+import { NAV_LINKS, NEWS } from '@/lib/constants'
+```
+
+## Image Optimization
+
+- Next.js Image component used throughout
+- Configured formats: AVIF and WebP (`next.config.js`)
+- Logo at `/public/images/logo.png`
+- Priority loading for above-the-fold images (Hero)
+- Placeholder images in components (ready for real images)
+
+## Content Updates
+
+To update site content, edit `src/lib/constants.ts`:
+- `NAV_LINKS`: Navigation menu items
+- `MISSION`, `VISION`, `VALUES`: Organization info
+- `PROGRAMS`: Available programs
+- `CONTACT_INFO`: Contact details and social media
+- `PARTNERS`: Allies and sponsors
+- `NEWS`: News articles (temporary until CMS integration)
+
+## SEO Configuration
+
+- Each page has its own `Metadata` export
+- Spanish locale (`es_CO`)
+- Open Graph tags configured in root layout
+- Dynamic metadata for news articles based on slug
+
+## Future Enhancements
+
+### CMS Integration (Planned)
+The news system is prepared for CMS integration:
+- Replace `NEWS` constant with API calls to Contentful/Sanity
+- Keep the same data structure for easy migration
+- Add rich text rendering for article content
+- Implement image upload and optimization
+
+### Backend for Contact Form
+- API route ready to be implemented at `src/app/api/contact/route.ts`
+- Form validation already in place with Zod schema
+- Email service integration pending (Resend recommended)
+
+### Donations System
+- Future expansion for payment gateway integration
+- Planned routes: `src/app/api/donations/`
+- Support for PayU/MercadoPago for Colombian market
+
+## Language & Locale
+
+- Primary language: Spanish (Colombia)
+- All content in Spanish
+- Future roadmap includes English version for international donors
